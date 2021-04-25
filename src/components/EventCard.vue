@@ -4,7 +4,7 @@
       <h1>{{ event.title }}</h1>j
       <span>@{{ event.time }} on {{ event.date }}</span>
     </div>
-  </router-link> |
+  </router-link>
 </template>
 
 <script lang="ts">

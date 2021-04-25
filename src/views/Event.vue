@@ -2,7 +2,8 @@
   <div class="event">
     <img alt="Vue logo" src="../assets/logo.png" />
     <h1>Event</h1>
-    <EventDetails :event="event"></EventDetails>
+    <EventDetails :event="event" v-if="event"></EventDetails>
+    <div v-if="!event">Loading ....</div>
   </div>
 </template>
 
@@ -19,7 +20,7 @@ export default defineComponent({
   props: ["id"],
   data() {
     return {
-      event: [],
+      event: null,
     };
   },
   async created() {

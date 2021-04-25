@@ -3,6 +3,8 @@
     <img alt="Vue logo" src="../assets/logo.png" />
 
     <h1>Events</h1>
+    <div v-if="loading">Loading ....</div>
+    <div v-if="!loading && events.length == 0">No Events</div>
     <EventCard
       v-for="event in events"
       :key="event.id"
@@ -23,11 +25,13 @@ export default defineComponent({
   },
   data() {
     return {
+      loading: true,
       events: [],
     };
   },
   async created() {
     this.events = (await getEvents())["data"];
+    this.loading = false;
   },
 });
 </script>
