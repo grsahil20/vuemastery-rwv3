@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import EventList from "../views/EventList.vue";
 import About from "../views/About.vue";
 import Event from "../views/Event.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,8 +19,17 @@ const routes: Array<RouteRecordRaw> = [
     path: "/events/:id",
     name: "Event",
     component: Event,
-    props: true
+    props: true,
     // component: () => import("../views/New.vue"),
+  },
+  {
+    path: "/404",
+    name: "NotFound",
+    component: NotFound,
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "404",
   },
 ];
 
