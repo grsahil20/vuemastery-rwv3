@@ -27,7 +27,7 @@ export default defineComponent({
     };
   },
   async created() {
-    this.events = (await getEvents())['data'];
+    this.events = (await getEvents())["data"];
   },
 });
 </script>

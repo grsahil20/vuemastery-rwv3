@@ -1,8 +1,10 @@
 <template>
-  <div class="eventCard">
-    <h1>{{ event.title }}</h1>
-    <span>@{{ event.time }} on {{ event.date }}</span>
-  </div>
+  <router-link :to="{ name: 'Event', params: { id: event.id } }">
+    <div class="eventCard">
+      <h1>{{ event.title }}</h1>j
+      <span>@{{ event.time }} on {{ event.date }}</span>
+    </div>
+  </router-link> |
 </template>
 
 <script lang="ts">
@@ -12,23 +14,8 @@ export default defineComponent({
   name: "EventCard",
   props: {
     // event: Object,
-    event: Object
-  },
-  data() {
-    return {
-      // event: {
-      //   id: 5928101,
-      //   category: "animal welfare",
-      //   title: "Cat Adoption Day",
-      //   description: "Find your new feline friend at this event.",
-      //   location: "Meow Town",
-      //   date: "January 28, 2022",
-      //   time: "12:00",
-      //   petsAllowed: true,
-      //   organizer: "Kat Laydee",
-      // },
-    };
-  },
+    event: Object,
+  }
 });
 </script>
 
@@ -38,7 +25,7 @@ export default defineComponent({
   border: 1px solid black;
   width: 350px;
   margin: 15px auto;
-  padding:20px;
+  padding: 20px;
 }
 .eventCard:hover {
   transform: scale(1.11);
@@ -56,6 +43,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  text-decoration: none;
 }
 </style>

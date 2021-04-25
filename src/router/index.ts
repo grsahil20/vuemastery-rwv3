@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import EventList from "../views/EventList.vue";
 import About from "../views/About.vue";
+import Event from "../views/Event.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,12 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     component: About,
   },
   {
-    path: "/new",
-    name: "new",
-    // route level code-splitting
-    // this generates a separate chunk (new.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import("../views/New.vue"),
+    path: "/events/:id",
+    name: "Event",
+    component: Event,
+    props: true
+    // component: () => import("../views/New.vue"),
   },
 ];
 

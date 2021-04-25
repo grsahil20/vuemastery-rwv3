@@ -2,8 +2,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL:
-    "https://my-json-server.typicode.com/grsahil20/vue-3-sample-data",
+  baseURL: "https://my-json-server.typicode.com/grsahil20/vue-3-sample-data",
   withCredentials: false,
   headers: {
     Accept: "application/json",
@@ -12,3 +11,4 @@ const apiClient = axios.create({
 });
 
 export const getEvents = async () => await apiClient.get("/events");
+export const getEvent = async (id) => await apiClient.get(`/events/${id}`);
